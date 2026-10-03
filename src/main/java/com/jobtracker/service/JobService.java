@@ -24,8 +24,7 @@ public class JobService {
     
     //Get Job By Id;
     public Job getJobById(Long id){
-        Optional<Job> job = jobRepository.findById(id);
-        Job job1 = job.get();
-        return job1;
+        return jobRepository.findById(id)
+                .orElse(null);
     }
 }
