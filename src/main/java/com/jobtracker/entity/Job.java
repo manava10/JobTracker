@@ -20,4 +20,7 @@ public class Job
     private Integer salary;
     private Integer experienceReq;
     private LocalDate postedDate;
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 }

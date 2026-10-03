@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,4 +18,8 @@ public class Company {
     private String location;
     private String website;
     private LocalDateTime createdAt;
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "job"
+    )
+    private List<Job> job;
 }
