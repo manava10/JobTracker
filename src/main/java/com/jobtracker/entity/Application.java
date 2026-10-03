@@ -28,6 +28,6 @@ public class Application
     private Job job;
 
     @OneToMany(cascade = CascadeType.ALL,
-    mappedBy = "interview")
+    mappedBy = "application")
     private List<Interview> interviews;
 }
