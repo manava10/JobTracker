@@ -17,4 +17,7 @@ public class User {
     private String email;
     private String password;
     private LocalDateTime createdAt;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "profile_id")
+    private Profile profile;
 }

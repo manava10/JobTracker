@@ -14,4 +14,6 @@ public class Profile {
     private String location;
     private String[] skills;
     private String resumeUrl;
+    @OneToOne(mappedBy = "profile")
+    private User user;
 }
