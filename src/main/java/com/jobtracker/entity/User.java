@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -20,4 +21,10 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_id")
     private Profile profile;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "user"
+    )
+    private List<Application> applicationList;
 }

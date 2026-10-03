@@ -21,5 +21,5 @@ public class Company {
     @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "company"
     )
-    private List<Job> job;
+    private List<Job> jobs;
 }

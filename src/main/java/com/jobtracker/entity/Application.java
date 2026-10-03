@@ -17,4 +17,7 @@ public class Application
     @Enumerated(EnumType.STRING)
     private ApplicationStatus status;
     private String coverLetter;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
