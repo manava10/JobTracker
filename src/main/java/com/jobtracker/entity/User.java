@@ -26,5 +26,5 @@ public class User {
             cascade = CascadeType.ALL,
             mappedBy = "user"
     )
-    private List<Application> applicationList;
+    private List<Application> applications;
 }

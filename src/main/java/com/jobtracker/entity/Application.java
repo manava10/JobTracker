@@ -20,4 +20,8 @@ public class Application
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "job")
+    private Job job;
 }
