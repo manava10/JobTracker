@@ -19,7 +19,7 @@ public class Company {
     private String website;
     private LocalDateTime createdAt;
     @OneToMany(cascade = CascadeType.ALL,
-            mappedBy = "job"
+            mappedBy = "company"
     )
     private List<Job> job;
 }
