@@ -27,6 +27,6 @@ public class Job
     private Company company;
 
     @OneToMany(cascade = CascadeType.ALL,
-    mappedBy = "application")
+    mappedBy = "job")
     private List<Application> applications;
 }
