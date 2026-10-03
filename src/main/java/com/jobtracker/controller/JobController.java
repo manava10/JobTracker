@@ -15,9 +15,9 @@ public class JobController {
     @PostMapping("/jobs")
     public ResponseEntity<Job> postJob(@RequestBody  Job b){
         jobService.saveAJob(b);
-        return new ResponseEntity<>(b, HttpStatus.OK);
+        return new ResponseEntity<>(b, HttpStatus.CREATED);
     }
-    @GetMapping("jobs")
+    @GetMapping("/jobs")
     public ResponseEntity<List<Job>> getAllJobs(){
         List<Job> jobList = jobService.getAllJobs();
         return new ResponseEntity<>(jobList,HttpStatus.OK);
