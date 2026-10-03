@@ -5,6 +5,8 @@ import lombok.Data;
 
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Data
 @Entity
 @Table(name="application")
@@ -24,4 +26,8 @@ public class Application
     @ManyToOne
     @JoinColumn(name = "job_id")
     private Job job;
+
+    @OneToMany(cascade = CascadeType.ALL,
+    mappedBy = "interview")
+    private List<Interview> interviews;
 }

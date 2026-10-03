@@ -16,4 +16,8 @@ public class Interview {
     private InterviewType interviewType;
     private String result;
     private String feedback;
+
+    @ManyToOne
+    @JoinColumn(name = "application_id")
+    private Application application;
 }
