@@ -10,11 +10,13 @@ import java.time.LocalDate;
 public class Job
 {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
     private String location;
     @Enumerated(EnumType.STRING)
+    private JobType jobType;
     private Integer salary;
     private Integer experienceReq;
     private LocalDate postedDate;

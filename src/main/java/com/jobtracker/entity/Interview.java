@@ -9,6 +9,7 @@ import java.time.LocalDate;
 @Table(name = "interview")
 public class Interview {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate interviewDate;
     @Enumerated(EnumType.STRING)

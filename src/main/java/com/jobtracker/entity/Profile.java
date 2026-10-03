@@ -1,8 +1,6 @@
 package com.jobtracker.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -10,9 +8,10 @@ import lombok.Data;
 @Table(name="profile")
 public class Profile {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long phoneNumber;
-    private String Location;
+    private String location;
     private String[] skills;
     private String resumeUrl;
 }
