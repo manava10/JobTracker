@@ -13,6 +13,7 @@ import javax.swing.text.html.Option;
 public class JobService {
     @Autowired
     private JobRepository jobRepository;
+    @Autowired
     private ModelMapper modelMapper;
     public JobDTO saveAJob(JobDTO j){
         jobRepository.save(modelMapper.map(j,Job.class));
@@ -29,7 +30,7 @@ public class JobService {
     }
     
     //Get Job By Id;
-    public Job getJobById(Long id){
+    public JobDTO getJobById(Long id){
         Job job =  jobRepository.findById(id)
                 .orElse(null);
         if(job!=null){
