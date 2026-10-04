@@ -19,7 +19,7 @@ public class JobController {
 
     @PostMapping("/jobs")
     public ResponseEntity<JobDTO> postJob(@RequestBody  JobDTO b){
-        JobDTO j = modelMapper.map(jobService.saveAJob(b),JobDTO.class);
+        JobDTO j = jobService.saveAJob(b);
         return new ResponseEntity<>(j, HttpStatus.CREATED);
     }
     @GetMapping("/jobs")
