@@ -19,18 +19,17 @@ public class JobController {
 
     @PostMapping("/jobs")
     public ResponseEntity<JobDTO> postJob(@RequestBody  JobDTO b){
-        jobService.saveAJob(b);
-        return new ResponseEntity<>(b, HttpStatus.CREATED);
+        JobDTO j = modelMapper.map(jobService.saveAJob(b),JobDTO.class);
+        return new ResponseEntity<>(j, HttpStatus.CREATED);
     }
     @GetMapping("/jobs")
     public ResponseEntity<List<JobDTO>> getAllJobs(){
-        List<JobDTO> jobList = jobService.getAllJobs().stream().map(a->
-                modelMapper.map(a,JobDTO.class)).toList();
+        List<JobDTO> jobList = jobService.getAllJobs();
         return new ResponseEntity<>(jobList,HttpStatus.OK);
     }
     @GetMapping("/jobs/{id}")
     public ResponseEntity<JobDTO> getJobById(@PathVariable  Long id){
-        JobDTO job =modelMapper.map(jobService.getJobById(id),JobDTO.class);
+        JobDTO job = jobService.getJobById(id);
         return new ResponseEntity<>(job,HttpStatus.OK);
     }
 }
