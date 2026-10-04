@@ -16,8 +16,10 @@ public class JobService {
     @Autowired
     private ModelMapper modelMapper;
     public JobDTO saveAJob(JobDTO j){
-        jobRepository.save(modelMapper.map(j,Job.class));
-        return j;
+        Job job = modelMapper.map(j,Job.class);
+        Job returnJob = jobRepository.save(job);
+        return modelMapper.map(returnJob,JobDTO.class);
+
     }
     //Method to get all Jobs
     public List<JobDTO> getAllJobs() {
